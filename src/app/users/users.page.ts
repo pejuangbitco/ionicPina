@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ToastController } from '@ionic/angular';
 import { PostProvider } from '../../providers/post-provider';
 import { Router } from '@angular/router';
-
+import { Storage } from '@ionic/Storage';
 @Component({
   selector: 'app-users',
   templateUrl: './users.page.html',
@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class UsersPage implements OnInit {
 
-  pesans: any;
+  dataDB: any;
   constructor(
   	private router: Router,
   	private postPvdr: PostProvider,
@@ -21,22 +21,26 @@ export class UsersPage implements OnInit {
   }
 
   ionViewWillEnter(){
-  	this.pesans = [];
-  	this.loadPesan();
+  	this.dataDB = [];
+  	this.loadDataDB();
   }
 
-  loadPesan(){
+  loadDataDB(){
   	return new Promise(resolve => {
   		let body = {
-  			aksi : 'getdatapesan'
+  			aksi : 'getdatauser'
   		};
 
   		this.postPvdr.postData(body, 'proses-api.php').subscribe(data => {
-  			for(let pesan of data.result){
-  				this.pesans.push(pesan);
+  			for(let d of data.result){
+  				this.dataDB.push(d);
   			}
   			resolve(true);
   		});
   	});
+  }
+
+  adduser() {
+    this.router.navigate(['/adduser']);
   }
 }

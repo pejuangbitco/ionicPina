@@ -19,12 +19,7 @@ export class AppComponent {
     },
     {
       title: 'Manage Form',
-      url: '/peralatan',
-      icon: 'copy'
-    },
-    {
-      title: 'Manage User',
-      url: '/users',
+      url: '/forms',
       icon: 'copy'
     },
     {
@@ -33,16 +28,17 @@ export class AppComponent {
       icon: 'mail'
     },
     {
-      title: 'Pengaturan',
-      url: '/pengaturan',
-      icon: 'cog'
+      title: 'Logout',
+      url: '/login',
+      icon: 'exit'
     }
   ];
 
   constructor(
     private platform: Platform,
     private splashScreen: SplashScreen,
-    private statusBar: StatusBar
+    private statusBar: StatusBar,
+    private storage: Storage
   ) {
     this.initializeApp();
   }

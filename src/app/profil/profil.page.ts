@@ -13,8 +13,8 @@ export class ProfilPage implements OnInit {
 
   admin: any;
   username: string;
-  password: string;
-
+  status: string;
+  nama: string;
   constructor(
     private router: Router,
   	private postPvdr: PostProvider,
@@ -29,9 +29,13 @@ export class ProfilPage implements OnInit {
     this.storage.get('session_storage').then((res)=>{
       this.admin = res;
       this.username = this.admin.username;
-      this.password = this.admin.password;
+      this.status = this.admin.status;
+      this.nama = this.admin.nama;
       console.log(res);
     });
   }
 
+  manage_user() {
+    this.router.navigate(['/users']);
+  }
 }

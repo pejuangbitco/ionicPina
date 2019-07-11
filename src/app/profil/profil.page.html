@@ -8,9 +8,45 @@
 </ion-header>
 
 <ion-content>
-  
-
 <ion-grid>
+  <ion-row>
+    <ion-col size="12">
+      <ion-item>
+      <ion-avatar>
+        <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
+      </ion-avatar>
+      <ion-button (click)="manage_user()" slot="end" color="primary">Manage Users</ion-button>  
+      </ion-item>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col size="12">
+      <ion-list>
+        <ion-item>
+          <ion-col size="4">Nama</ion-col>
+          <ion-col size="8"><ion-text color="primary">: {{nama}}</ion-text></ion-col>
+        </ion-item>
+        <ion-item>
+          <ion-col size="4">Username</ion-col>
+          <ion-col size="8"><ion-text color="primary">: {{username}}</ion-text></ion-col>
+        </ion-item>
+        <ion-item>
+          <ion-col size="4">Status</ion-col>
+          <ion-col size="8"><ion-text color="primary">: {{status}}</ion-text></ion-col>
+        </ion-item>
+      </ion-list>
+    </ion-col>
+  </ion-row>
+</ion-grid>
+<!-- 
+<ion-grid>
+  <ion-row>
+    <ion-col size="4" offset="1" align-item="center">
+      <ion-avatar>
+  <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
+</ion-avatar>
+    </ion-col>
+  </ion-row>
     <ion-row>
       <ion-col size="4">
         <div class="ion-text-end">
@@ -24,7 +60,7 @@
       </ion-col>
       
     </ion-row>
-  </ion-grid>
+  </ion-grid> -->
   
   
 </ion-content>

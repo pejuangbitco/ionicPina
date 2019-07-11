@@ -4,21 +4,25 @@
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
     <ion-title>
-      List
+      Pesan
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <ion-list>
+  <ion-list >
     <ion-item *ngFor="let pesan of pesans">      
       
-        {{pesan.tanggal}}
+        {{pesan.isi_pesan}}
       
-      <ion-button slot="end">Open</ion-button>
+      <ion-button 
+      (click)="lihatPesan(pesan.id_pesan,pesan.isi_pesan,pesan.dari,pesan.untuk)" slot="end">Open</ion-button>
+      <!-- <ion-button 
+      (click)="coba()" slot="end">Open</ion-button> -->
       <ion-button slot="end" color="danger">Hapus</ion-button>
     </ion-item>
   </ion-list>
+  
   <!--
     <div *ngIf="selectedItem" padding>
       You navigated here from <b>{{selectedItem.title }}</b>

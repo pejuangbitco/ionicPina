@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar>
+  	<ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>detailpesan</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<ion-list>
+
+	  <ion-item>
+	    <ion-label>Dari:</ion-label>
+	    <ion-input type="text" readonly [(ngModel)]="dari"></ion-input>
+	  </ion-item>
+
+	  <ion-item>
+	    <ion-label>Isi Pesan:</ion-label>
+	    <ion-input readonly type="text" [(ngModel)]="isi_pesan"></ion-input>
+	  </ion-item>
+
+	  <ion-item>
+	    <ion-label>Balas:</ion-label>
+	    <ion-input type="text" [(ngModel)]="isi_balasan"></ion-input>
+	  </ion-item>
+	</ion-list>
+
+	<div>
+	  <ion-button expand="block" padding color="tertiary" (click)="balas()">Balas Pesan</ion-button>
+	</div>
+</ion-content>

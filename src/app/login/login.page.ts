@@ -32,6 +32,8 @@ export class LoginPage implements OnInit {
         aksi: 'login'
       };
 
+      console.log(body);
+
       this.postPvdr.postData(body, 'proses-api.php').subscribe(async data =>{
         var alertpesan = data.msg;
         if(data.success){

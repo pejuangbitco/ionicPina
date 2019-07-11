@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar>
+  	<ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>adduser</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+	<ion-item>
+		<ion-label position="floating"> Name </ion-label>
+		<ion-input type="text" [(ngModel)]="nama_user"></ion-input>
+	</ion-item>
+
+	<ion-item>
+		<ion-label position="floating"> Username </ion-label>
+		<ion-input type="text" [(ngModel)]="username_user"></ion-input>
+	</ion-item>
+
+	<ion-item>
+		<ion-label position="floating"> Password </ion-label>
+		<ion-input type="text" [(ngModel)]="password_user"></ion-input>
+	</ion-item>
+
+	<ion-button expand="block" padding color="tertiary" (click)="createdProses()" fill="outline">Tambah</ion-button>
+
+</ion-content>

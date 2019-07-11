@@ -1,0 +1,97 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      Forms
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<ion-list *ngIf="status=='admin'">
+  <ion-card>
+	  <ion-item>    
+	    <ion-label>Form DFR</ion-label>
+	    <ion-button (click)="showForm('DFR')" fill="outline" slot="end">View</ion-button>
+	  </ion-item>
+
+	  <ion-card-content>
+	    Formulir monitoring DFR harian
+	  </ion-card-content>
+ </ion-card>
+ <ion-card>
+	  <ion-item>    
+	    <ion-label>Form IP PHONE</ion-label>
+	    <ion-button (click)="showForm('IP')" fill="outline" slot="end">View</ion-button>
+	  </ion-item>
+
+	  <ion-card-content>
+	    Formulir monitoring IP PHONE harian
+	  </ion-card-content>
+ </ion-card>
+ <ion-card>
+	  <ion-item>    
+	    <ion-label>Form PLC</ion-label>
+	    <ion-button (click)="showForm('PLC')" fill="outline" slot="end">View</ion-button>
+	  </ion-item>
+
+	  <ion-card-content>
+	    Formulir monitoring harian PLC, MUX, PABX
+	  </ion-card-content>
+ </ion-card>
+ <ion-card>
+	  <ion-item>    
+	    <ion-label>Form Master Station</ion-label>
+	    <ion-button (click)="showForm('MS')" fill="outline" slot="end">View</ion-button>
+	  </ion-item>
+
+	  <ion-card-content>
+	    Formulir service inspection master station
+	  </ion-card-content>
+ </ion-card>
+ <ion-card>
+	  <ion-item>    
+	    <ion-label>Form RTU dan Gateway</ion-label>
+	    <ion-button (click)="showForm('RTU')" fill="outline" slot="end">View</ion-button>
+	  </ion-item>
+
+	  <ion-card-content>
+	    Formulir monitoring harian peralatan RTU dan Gateway
+	  </ion-card-content>
+ </ion-card>
+ <ion-card>
+	  <ion-item>    
+	    <ion-label>Form RADIO</ion-label>
+	    <ion-button (click)="showForm('RADIO')" fill="outline" slot="end">View</ion-button>
+	  </ion-item>
+
+	  <ion-card-content>
+	    Formulir monitoring RADIO harian
+	  </ion-card-content>
+ </ion-card>
+ <ion-card>
+	  <ion-item>    
+	    <ion-label>Form PS SCADA</ion-label>
+	    <ion-button (click)="showForm('SCADA')" fill="outline" slot="end">View</ion-button>
+	  </ion-item>
+
+	  <ion-card-content>
+	    Formulir harian sistem power supply SCADA
+	  </ion-card-content>
+ </ion-card>
+</ion-list>
+<!-- <ion-list *ngIf="status=='user'">
+  <ion-card *ngFor="let b of [].constructor(50)">
+	  <ion-item>    
+	    <ion-label>Bukit Asam [DFR]</ion-label>
+	    <ion-button fill="outline" slot="end">View</ion-button>
+	  </ion-item>
+
+	  <ion-card-content>
+	    Senin, 12 Januari 2019
+	  </ion-card-content>
+	</ion-card>
+</ion-list>
+</ion-content> -->

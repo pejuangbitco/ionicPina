@@ -1,9 +1,42 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>users</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-button (click)="adduser()" size="sm" slot="end" color="tertiary" fill="outline" (click)="addCustomer()">
+        user
+        <ion-icon  slot="end" name="add"></ion-icon>
+      </ion-button>
+    <ion-title>
+      List User
+    </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <ion-list>
+    <ion-item color="primary">
+      <div style="width: 50%;">
+        Nama
+      </div>
+      <div style="width: 30%;">
+        Username
+      </div>
+    </ion-item>
+    <ion-item *ngFor="let d of dataDB">      
+      <div style="width: 50%;">
+        {{d.nama}}
+      </div>
+      <div style="width: 30%;">
+        {{d.username}}
+      </div>
+        
+      
+      <div style="width: 20%;">
+        <ion-button (click)="adduser()" slot="end" color="danger">Hapus</ion-button>  
+      </div>
+      
+    </ion-item>
+  </ion-list>
 
 </ion-content>
