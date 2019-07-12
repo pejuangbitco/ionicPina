@@ -1,5 +1,7 @@
 {
   "name": "pinaApp",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
