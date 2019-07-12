@@ -15,7 +15,7 @@
       <ion-avatar>
         <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
       </ion-avatar>
-      <ion-button (click)="manage_user()" slot="end" color="primary">Manage Users</ion-button>  
+      <ion-button *ngIf="status=='admin'" (click)="manage_user()" slot="end" color="primary">Manage Users</ion-button>  
       </ion-item>
     </ion-col>
   </ion-row>
