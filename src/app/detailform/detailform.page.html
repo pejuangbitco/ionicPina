@@ -21,98 +21,31 @@
     <br>
     <ion-item>
       Keterangan:
-      <ion-checkbox checked="true" slot="start" color="primary"></ion-checkbox>OK
+      <ion-radio name="coba" mode="md" checked="true" slot="start" color="primary"></ion-radio>OK
     </ion-item>
     <ion-item>
       Keterangan:
-      <ion-checkbox checked="true" slot="start" color="dark"></ion-checkbox>Tidak OK
+      <ion-radio name="coba" mode="md" checked="true" slot="start" color="dark"></ion-radio>Tidak OK
     </ion-item>
     
   </ion-list>
   <br>
   <ion-list>
     
-      <ion-item *ngFor="let b of row_data; let rindex = index">
+      <ion-item lines="inset" *ngFor="let b of row_data; let rindex = index">
       <ion-label>{{rindex+1}}. {{b}}</ion-label>
+      <ion-radio-group>
+        <ion-item lines="none">
+        <ion-radio name="a" mode="md" slot="start" color="dark"></ion-radio>    
+        </ion-item>
+      <ion-item lines="none">
+        <ion-radio  name="a" mode="md" slot="start" color="primary"></ion-radio>  
+      </ion-item>
       
-      <ion-checkbox slot="end" color="dark"></ion-checkbox>
-      <ion-checkbox slot="end" color="primary"></ion-checkbox>
-    </ion-item>
-   <!--  <ion-item>
-      
-      <ion-label>2. DFR SJARO 1,2</ion-label>
-      
-      <ion-select placeholder="kondisi">
-        <ion-select-option selected="true">OK</ion-select-option>
-        <ion-select-option>Tidak</ion-select-option>
-      </ion-select>
+      </ion-radio-group>
     </ion-item>
     <ion-item>
-      
-      <ion-label>3. DFR BTRJA 1,2</ion-label>
-      
-      <ion-select placeholder="kondisi">
-        <ion-select-option >OK</ion-select-option>
-        <ion-select-option selected="true">Tidak</ion-select-option>
-      </ion-select>
-    </ion-item>
-    <ion-item>
-      
-      <ion-label>4. DFR GUMEG 1,2</ion-label>
-      
-      <ion-select placeholder="kondisi">
-        <ion-select-option selected="true">OK</ion-select-option>
-        <ion-select-option>Tidak</ion-select-option>
-      </ion-select>
-    </ion-item>
-    <ion-item>
-      
-      <ion-label>5. DFR MRINA 1,2</ion-label>
-      
-      <ion-select placeholder="kondisi">
-        <ion-select-option selected="true">OK</ion-select-option>
-        <ion-select-option>Tidak</ion-select-option>
-      </ion-select>
-    </ion-item>
-    <ion-item>
-      
-      <ion-label>6. DFR KRSAN 1,2</ion-label>
-      
-      <ion-select placeholder="kondisi">
-        <ion-select-option>OK</ion-select-option>
-        <ion-select-option selected="true">Tidak</ion-select-option>
-      </ion-select>
-    </ion-item>
-    <ion-item> -->
-      <!-- <ion-item *ngFor="let b of row_data; let rindex = index"> -->
-      <!-- <ion-label>7. DFR TLKLP - TLDKU 1,2</ion-label>
-      
-      <ion-select placeholder="kondisi">
-        <ion-select-option selected="true">OK</ion-select-option>
-        <ion-select-option>Tidak</ion-select-option>
-      </ion-select>
-    </ion-item>
-    <ion-item> -->
-      <!-- <ion-item *ngFor="let b of row_data; let rindex = index"> -->
-      <!-- <ion-label>8. DFR NTRHN 1,2</ion-label>
-      
-      <ion-select placeholder="kondisi">
-        <ion-select-option selected="true">OK</ion-select-option>
-        <ion-select-option>Tidak</ion-select-option>
-      </ion-select>
-    </ion-item>
-    <ion-item> -->
-      <!-- <ion-item *ngFor="let b of row_data; let rindex = index"> -->
-      <!-- <ion-label>9. DFR TGNNG 1,2</ion-label>
-      
-      <ion-select placeholder="kondisi">
-        <ion-select-option selected="true">OK</ion-select-option>
-        <ion-select-option>Tidak</ion-select-option>
-      </ion-select>
-    </ion-item> -->
-
-    <ion-item>
-      <ion-button slot="end" expand="block" color="primary">Sudah dilihat</ion-button>
+      <ion-button *ngIf="status=='admin'" slot="end" expand="block" color="primary">Submit</ion-button>
     </ion-item>
   </ion-list>
 </ion-content>

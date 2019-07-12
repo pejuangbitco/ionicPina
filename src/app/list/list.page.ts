@@ -29,7 +29,7 @@ export class ListPage implements OnInit {
       this.id_user = this.user.nama;
       this.pesans = [];
       this.loadPesan();
-      console.log(res);
+      // console.log(res);
     });
   	
   }
@@ -53,11 +53,11 @@ export class ListPage implements OnInit {
   	return new Promise(resolve => {
       console.log(this.id_user);
   		let body = {
-  			aksi : 'getdatapesan',
+  			aksi : 'getpesan',
         nama : this.user.nama
   		};
 
-  		this.postPvdr.postData(body, 'proses-api.php').subscribe(data => {
+  		this.postPvdr.postData(body, 'user/index_post').subscribe(data => {
   			for(let pesan of data.result){
   				this.pesans.push(pesan);
   			}
@@ -66,5 +66,40 @@ export class ListPage implements OnInit {
   	});
   }
 
+  hapusPesan(id_pesan) {
+      let body = {
+        aksi : 'deletepesan',
+        id_pesan : id_pesan
+      };
+
+      this.postPvdr.postData(body, 'user/index_post').subscribe(data => {        
+        this.ionViewWillEnter();      
+      });
+  }
+
+  doRefresh(event){
+    setTimeout(() =>{
+      this.ionViewWillEnter();
+      event.target.complete();
+    }, 500);
+  }
+
+  loadData(event:any){    
+    setTimeout(() =>{
+    this.loadPesan().then(()=>{
+      event.target.complete();
+    });
+    }, 500);
+  }
+
+  async prosesLogout(){
+    this.storage.clear();
+    this.router.navigate(['/login']);
+    const toast = await this.toastCtrl.create({
+        message: 'logout succesful',
+        duration: 3000
+      });
+    toast.present();
+  }
   
 }

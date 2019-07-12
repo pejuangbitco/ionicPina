@@ -19,7 +19,7 @@
       (click)="lihatPesan(pesan.id_pesan,pesan.isi_pesan,pesan.dari,pesan.untuk)" slot="end">Open</ion-button>
       <!-- <ion-button 
       (click)="coba()" slot="end">Open</ion-button> -->
-      <ion-button slot="end" color="danger">Hapus</ion-button>
+      <ion-button (click)="hapusPesan(pesan.id_pesan)" slot="end" color="danger">Hapus</ion-button>
     </ion-item>
   </ion-list>
   

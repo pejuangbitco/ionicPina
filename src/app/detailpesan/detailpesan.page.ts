@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PostProvider } from '../../providers/post-provider';
 import { Router, ActivatedRoute } from '@angular/router';
-
+import { ToastController } from '@ionic/angular';
 @Component({
   selector: 'app-detailpesan',
   templateUrl: './detailpesan.page.html',
@@ -17,7 +17,8 @@ export class DetailpesanPage implements OnInit {
   constructor(
   	private postPvdr: PostProvider,
   	private router: Router,
-  	private actRoute: ActivatedRoute
+  	private actRoute: ActivatedRoute,
+    public toastCtrl: ToastController
   ) { }
  
   ngOnInit() {
@@ -30,8 +31,8 @@ export class DetailpesanPage implements OnInit {
   	});
   }
 
-  balas(){
-  	return new Promise(resolve => {
+  async balas(){
+  	
   		let body = {
   			aksi : 'balaspesan',
   			dari : this.untuk,
@@ -39,12 +40,14 @@ export class DetailpesanPage implements OnInit {
   			isi_pesan : this.isi_balasan
   		};
   		console.log(body);
-  		this.postPvdr.postData(body, 'proses-api.php').subscribe(data => {
+  		this.postPvdr.postData(body, 'user/index_post').subscribe( async data => {
   			this.router.navigate(['/list']);
-  			console.log('OK');
-  		});
-  	});
-
+  			const toast = await this.toastCtrl.create({
+          message: 'Berhasil membalas pesan',
+          duration: 2000
+          });
+         toast.present();
+  		 });
   }
 
 }

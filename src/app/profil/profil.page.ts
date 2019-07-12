@@ -31,7 +31,7 @@ export class ProfilPage implements OnInit {
       this.username = this.admin.username;
       this.status = this.admin.status;
       this.nama = this.admin.nama;
-      console.log(res);
+      console.log('res profil:'+res);
     });
   }
 

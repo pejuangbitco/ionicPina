@@ -27,14 +27,14 @@ export class LoginPage implements OnInit {
   async prosesLogin(){
     if(this.username != "" && this.username != ""){
       let body = {
+        aksi: 'login',
         username: this.username,
-        password: this.password,
-        aksi: 'login'
+        password: this.password
       };
 
       console.log(body);
 
-      this.postPvdr.postData(body, 'proses-api.php').subscribe(async data =>{
+      this.postPvdr.postData(body, 'user/index_post').subscribe(async data =>{
         var alertpesan = data.msg;
         if(data.success){
           this.storage.set('session_storage', data.result);
@@ -45,27 +45,18 @@ export class LoginPage implements OnInit {
 		      });
 
       
-		  toast.present();
-		  this.username = "";
-		  this.password = "";
+    		  toast.present();
+    		  this.username = "";
+    		  this.password = "";
           console.log(data);
         
-         }else if(this.username=='coba' && this.password=="coba") {
-           const toast = await this.toastCtrl.create({
-          message: 'Login Succesfully.',
-          duration: 2000
-          });
-
-      
-          toast.present();
-          this.router.navigate(['/profil']);
-        }else{
+         }else{
           const toast = await this.toastCtrl.create({
-		    message: alertpesan,
-		    duration: 2000
-		  });
-    	  toast.present();
-        }
+  		    message: alertpesan,
+  		    duration: 2000
+		      });
+    	    toast.present();
+         }
       });
 
     }else{
