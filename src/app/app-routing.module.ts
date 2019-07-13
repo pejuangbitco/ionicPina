@@ -21,7 +21,8 @@ const routes: Routes = [
   { path: 'detailpesan', loadChildren: './detailpesan/detailpesan.module#DetailpesanPageModule' },
   { path: 'forms', loadChildren: './forms/forms.module#FormsPageModule' },
   { path: 'detailform', loadChildren: './detailform/detailform.module#DetailformPageModule' },
-  { path: 'adduser', loadChildren: './adduser/adduser.module#AdduserPageModule' }
+  { path: 'adduser', loadChildren: './adduser/adduser.module#AdduserPageModule' },
+  { path: 'pengaturan', loadChildren: './pengaturan/pengaturan.module#PengaturanPageModule' }
 ];
 
 @NgModule({

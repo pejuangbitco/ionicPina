@@ -3,30 +3,62 @@
   	<ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title>detailpesan</ion-title>
+    <ion-title>detail message</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-<ion-list>
 
-	  <ion-item>
+<ion-list *ngIf="status=='admin'">
+
+	  <ion-item *ngIf="id_pesan">
 	    <ion-label>Dari:</ion-label>
 	    <ion-input type="text" readonly [(ngModel)]="dari"></ion-input>
 	  </ion-item>
 
-	  <ion-item>
-	    <ion-label>Isi Pesan:</ion-label>
-	    <ion-input readonly type="text" [(ngModel)]="isi_pesan"></ion-input>
+	  <ion-item *ngIf="!id_pesan">
+	    <ion-label>Untuk:</ion-label>
+	    <ion-select [(ngModel)]="dari">
+	    	<ion-select-option *ngFor="let d of users" value="{{d.nama}}">
+	    		{{d.nama}}
+	    	</ion-select-option>
+	    </ion-select>
 	  </ion-item>
 
 	  <ion-item>
-	    <ion-label>Balas:</ion-label>
-	    <ion-input type="text" [(ngModel)]="isi_balasan"></ion-input>
+	    <ion-label position="stacked" >Isi Pesan:</ion-label>
+	    <ion-textarea placeholder="Ketik disini .. " rows="6" type="text" [(ngModel)]="isi_balasan"></ion-textarea>
 	  </ion-item>
-	</ion-list>
+
+	  <ion-item *ngIf="id_pesan">
+	    <ion-label position="floating">Balas:</ion-label>
+	    <ion-textarea placeholder="Ketik disini .. " rows="6" type="text" [(ngModel)]="isi_balasan"></ion-textarea>
+	  </ion-item>
+</ion-list>
+<ion-list *ngIf="status=='user'">
+	  <ion-item *ngIf="id_pesan">
+	    <ion-label>Dari:</ion-label>
+	    <ion-input type="text" readonly [(ngModel)]="dari"></ion-input>
+	  </ion-item>
+
+	  <ion-item *ngIf="!id_pesan">
+	    <ion-label>Untuk:</ion-label>
+	    <ion-input readonly type="text" [(ngModel)]="dari" value="admin"></ion-input>
+	  </ion-item>
+
+	  <ion-item>
+	    <ion-label position="floating" >Isi Pesan:</ion-label>
+	    <ion-textarea placeholder="Ketik disini .. " rows="6" type="text" [(ngModel)]="isi_balasan"></ion-textarea>
+	  </ion-item>
+
+	  <ion-item *ngIf="id_pesan">
+	    <ion-label position="floating">Balas:</ion-label>
+	    <ion-textarea placeholder="Ketik disini .. " rows="6" type="text" [(ngModel)]="isi_balasan"></ion-textarea>
+	</ion-item>
+</ion-list>
 
 	<div>
-	  <ion-button expand="block" padding color="tertiary" (click)="balas()">Balas Pesan</ion-button>
+	  <ion-button *ngIf="id_pesan" expand="block" padding color="tertiary" (click)="balas('Berhasil membalas pesan')">Balas Pesan</ion-button>
+	  <ion-button *ngIf="!id_pesan" expand="block" padding color="tertiary" (click)="balas('Berhasil mengirim pesan')">Kirim Pesan</ion-button>
 	</div>
 </ion-content>

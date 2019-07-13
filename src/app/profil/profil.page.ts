@@ -3,6 +3,7 @@ import { ToastController } from '@ionic/angular';
 import { PostProvider } from '../../providers/post-provider';
 import { Router } from '@angular/router';
 import { Storage } from '@ionic/Storage';
+import { MenuController } from '@ionic/angular';
 
 @Component({
   selector: 'app-profil',
@@ -19,8 +20,11 @@ export class ProfilPage implements OnInit {
     private router: Router,
   	private postPvdr: PostProvider,
     private storage: Storage,
-    public toastCtrl: ToastController
-    ) { }
+    public toastCtrl: ToastController,
+    private menu: MenuController
+    ) { 
+    this.menu.enable(true);
+  }
 
   ngOnInit() {
   }

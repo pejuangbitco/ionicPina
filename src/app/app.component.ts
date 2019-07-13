@@ -13,9 +13,9 @@ import { Storage } from '@ionic/Storage';
 export class AppComponent {
   public appPages = [
     {
-      title: 'Profil',
+      title: 'Home',
       url: '/profil',
-      icon: 'contact'
+      icon: 'home'
     },
     {
       title: 'Manage Form',
@@ -23,9 +23,14 @@ export class AppComponent {
       icon: 'copy'
     },
     {
-      title: 'Pesan',
+      title: 'Message',
       url: '/list',
       icon: 'mail'
+    },
+    {
+      title: 'Setting',
+      url: '/pengaturan',
+      icon: 'cog'
     },
     {
       title: 'Logout',

@@ -3,6 +3,10 @@
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
+    <ion-button (click)="addpesan()" size="sm" slot="end" color="tertiary" fill="outline">
+        Buat Pesan
+        <ion-icon  slot="end" name="add"></ion-icon>
+      </ion-button>
     <ion-title>
       Pesan
     </ion-title>
@@ -12,8 +16,8 @@
 <ion-content>
   <ion-list >
     <ion-item *ngFor="let pesan of pesans">      
-      
-        {{pesan.isi_pesan}}
+        <!-- {{pesan.tanggal}} -->
+        <ion-text color="primary"> {{pesan.dari}}</ion-text>
       
       <ion-button 
       (click)="lihatPesan(pesan.id_pesan,pesan.isi_pesan,pesan.dari,pesan.untuk)" slot="end">Open</ion-button>

@@ -29,7 +29,7 @@ export class ListPage implements OnInit {
       this.id_user = this.user.nama;
       this.pesans = [];
       this.loadPesan();
-      // console.log(res);
+      console.log(this.pesans);
     });
   	
   }
@@ -41,17 +41,13 @@ export class ListPage implements OnInit {
       dari: dari,
       untuk: untuk
     }
-    this.router.navigate(['/detailpesan/', detailpesan]);
+    this.router.navigate(['/detailpesan', detailpesan]);
     // this.router.navigate(['login']);
-  }
-
-  coba() {
-    console.log('aaaaaaaaa');
   }
 
   loadPesan(){
   	return new Promise(resolve => {
-      console.log(this.id_user);
+      // console.log(this.id_user);
   		let body = {
   			aksi : 'getpesan',
         nama : this.user.nama
@@ -63,7 +59,7 @@ export class ListPage implements OnInit {
   			}
   			resolve(true);
   		});
-  	});
+  	});    
   }
 
   hapusPesan(id_pesan) {
@@ -75,6 +71,10 @@ export class ListPage implements OnInit {
       this.postPvdr.postData(body, 'user/index_post').subscribe(data => {        
         this.ionViewWillEnter();      
       });
+  }
+
+  addpesan() {
+    this.router.navigate(['/detailpesan']);
   }
 
   doRefresh(event){
