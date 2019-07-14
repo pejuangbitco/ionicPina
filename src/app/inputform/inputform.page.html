@@ -1,0 +1,55 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      Input Form {{nama_form}}
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <br>
+  <ion-list>
+    
+    <ion-item>
+      <ion-label>Tanggal:</ion-label>
+      <!-- <ion-datetime displayFormat="DD/MM/YYYY" placeholder="pilih tanggal"></ion-datetime> -->
+      <ion-input [(ngModel)]="tanggal" type="date" placeholder="pilih tanggal"></ion-input>
+    </ion-item>
+    <br>
+    <ion-item>
+      Keterangan:
+      <ion-radio name="coba" mode="md" checked="true" slot="start" color="primary"></ion-radio>OK
+    </ion-item>
+    <ion-item>
+      Keterangan:
+      <ion-radio name="coba" mode="md" checked="true" slot="start" color="dark"></ion-radio>Tidak OK
+    </ion-item>
+    
+  </ion-list>
+  <br>
+  <ion-list *ngIf="nama_form=='DFR'">  
+    <ion-item lines="inset" *ngFor="let b of row_data; let rindex = index">
+      <ion-label>{{rindex+1}}. {{b.nama_alat}}</ion-label>
+      <ion-radio-group (ionChange)="setVal(b.id_alat,$event)">
+        <ion-item lines="none">
+        <ion-radio value="NOK" mode="md" slot="start" color="dark" ></ion-radio>    
+        </ion-item>
+        <ion-item lines="none">
+          <ion-radio value="OK" mode="md" slot="start"  color="primary"></ion-radio>  
+        </ion-item>
+      
+      </ion-radio-group>
+    </ion-item>
+  </ion-list>
+
+
+  <ion-list>
+    <ion-item lines="none">
+      <ion-button size="large" (click)="submitform()" slot="end" expand="block" color="success">Submit</ion-button>
+    </ion-item>
+  </ion-list>
+  
+</ion-content>

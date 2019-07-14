@@ -11,41 +11,23 @@
 
 <ion-content>
   <br>
+
   <ion-list>
-    
+    <ion-item>
+      ~Pilih Tanggal~
+    </ion-item>  
     <ion-item>
       <ion-label>Tanggal:</ion-label>
       <!-- <ion-datetime displayFormat="DD/MM/YYYY" placeholder="pilih tanggal"></ion-datetime> -->
-      <ion-input type="date" value="2019-07-09"></ion-input>
+      <ion-input [(ngModel)]="tanggal" type="date" placeholder="pilih tanggal"></ion-input>
     </ion-item>
     <br>
-    <ion-item>
-      Keterangan:
-      <ion-radio name="coba" mode="md" checked="true" slot="start" color="primary"></ion-radio>OK
-    </ion-item>
-    <ion-item>
-      Keterangan:
-      <ion-radio name="coba" mode="md" checked="true" slot="start" color="dark"></ion-radio>Tidak OK
-    </ion-item>
-    
   </ion-list>
   <br>
+
   <ion-list>
-    
-      <ion-item lines="inset" *ngFor="let b of row_data; let rindex = index">
-      <ion-label>{{rindex+1}}. {{b}}</ion-label>
-      <ion-radio-group>
-        <ion-item lines="none">
-        <ion-radio name="a" mode="md" slot="start" color="dark"></ion-radio>    
-        </ion-item>
-      <ion-item lines="none">
-        <ion-radio  name="a" mode="md" slot="start" color="primary"></ion-radio>  
-      </ion-item>
-      
-      </ion-radio-group>
-    </ion-item>
-    <ion-item>
-      <ion-button *ngIf="status=='admin'" slot="end" expand="block" color="primary">Submit</ion-button>
+    <ion-item lines="none">
+      <ion-button size="large" (click)="lihatForm()" slot="end" expand="block" color="primary">Lihat</ion-button>
     </ion-item>
   </ion-list>
 </ion-content>

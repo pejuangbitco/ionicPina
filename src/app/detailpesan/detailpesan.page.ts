@@ -40,7 +40,7 @@ export class DetailpesanPage implements OnInit {
       }
       this.postPvdr.postData(body, 'user/index_post').subscribe( data => {
         this.users = data.result;
-        console.log("llll");
+        // console.log("llll");
       });
     }
   }
@@ -59,7 +59,9 @@ export class DetailpesanPage implements OnInit {
         aksi : 'balaspesan',
         dari : this.nama_user_sekarang,
         untuk : this.dari,
-        isi_pesan : this.isi_balasan
+        isi_pesan : this.isi_balasan,
+        id_pesan: this.id_pesan,
+        dibalas: 1
       };
       console.log(body);
       this.postPvdr.postData(body, 'user/index_post').subscribe( async data => {
@@ -72,10 +74,10 @@ export class DetailpesanPage implements OnInit {
        });
     } else {
   		let body = {
-  			aksi : 'balaspesan',
+  			aksi : 'kirimpesan',
   			dari : this.nama_user_sekarang,
   			untuk : this.dari,
-  			isi_pesan : this.isi_balasan
+  			isi_pesan : this.isi_pesan
   		};
       console.log(body);
       this.postPvdr.postData(body, 'user/index_post').subscribe( async data => {

@@ -3,6 +3,7 @@
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
+    
     <ion-title>
       Forms
     </ion-title>
@@ -14,6 +15,10 @@
   <ion-card>
 	  <ion-item>    
 	    <ion-label>Form DFR</ion-label>
+	    <ion-button *ngIf="status=='admin'" size="sm" (click)="inputForm('DFR')" size="sm" slot="end" color="tertiary" fill="outline">
+        Buat Form
+        <ion-icon  slot="end" name="add"></ion-icon>
+      </ion-button>
 	    <ion-button (click)="showForm('DFR')" fill="outline" slot="end">View</ion-button>
 	  </ion-item>
 

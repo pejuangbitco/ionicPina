@@ -31,4 +31,11 @@ export class FormsPage implements OnInit {
   	this.router.navigate(['/detailform', tipe]);
   }
 
+  inputForm(jenis) {
+    let tipe = {
+      jenis: jenis
+    }
+    this.router.navigate(['/inputform', tipe]);
+  }
+
 }

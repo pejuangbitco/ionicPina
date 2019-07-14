@@ -27,6 +27,22 @@ export class AdduserPage implements OnInit {
   }
 
   createdProses() {
+    let body = {
+      aksi: 'adduser',
+      username: this.username_user,
+      nama: this.nama_user,
+      password: this.password_user,
+    }
+
+    this.postPvdr.postData(body, 'user/index_post').subscribe( async data=>{
+      if(data.success) {
+        const toast = await this.toastCtrl.create({
+          message: data.msg,
+          duration: 2000
+        });
+        toast.present();
+      }
+    });
   	this.router.navigate(['/users']);
   }
 

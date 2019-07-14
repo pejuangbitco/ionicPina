@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar>
+  	<ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Detail Form {{jenis}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <br>
+  <ion-list>
+    
+    <ion-item>
+      <ion-label>Tanggal:</ion-label>
+      <!-- <ion-datetime displayFormat="DD/MM/YYYY" placeholder="pilih tanggal"></ion-datetime> -->
+      <ion-input disabled [(ngModel)]="tanggal" type="date" placeholder="pilih tanggal"></ion-input>
+    </ion-item>
+    <br>
+    
+  </ion-list>
+  <br>
+  <ion-list *ngIf="jenis=='DFR'">  
+    <ion-item lines="inset" *ngFor="let b of row_data; let rindex = index">
+      <ion-label>{{rindex+1}}. {{b.nama_alat}}</ion-label>
+      <ion-text slot="end" color="primary">{{b.kondisi}}</ion-text>
+    </ion-item>
+  </ion-list>
+
+  <ion-list>
+    <ion-item lines="none">
+      <ion-button (click)="downloadForm()" slot="end" expand="block" color="primary">Download</ion-button>
+    </ion-item>
+  </ion-list>
+</ion-content>

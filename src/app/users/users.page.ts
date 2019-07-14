@@ -31,7 +31,7 @@ export class UsersPage implements OnInit {
   			aksi : 'getdatauser'
   		};
 
-  		this.postPvdr.postData(body, 'proses-api.php').subscribe(data => {
+  		this.postPvdr.postData(body, 'user/index_post').subscribe(data => {
   			for(let d of data.result){
   				this.dataDB.push(d);
   			}

@@ -22,7 +22,7 @@
     <ion-col size="12">
       <ion-list>
             
-            <ion-item routerLink="/users">
+            <ion-item *ngIf="status=='admin'" routerLink="/users">
               <ion-icon slot="start" name="contact"></ion-icon>
               <ion-label>
                 Manage User

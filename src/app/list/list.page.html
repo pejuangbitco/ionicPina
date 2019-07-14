@@ -15,7 +15,8 @@
 
 <ion-content>
   <ion-list >
-    <ion-item *ngFor="let pesan of pesans">      
+    <ion-item *ngFor="let pesan of pesans">
+    <ion-checkbox  disabled="true" [checked]="pesan.dibalas>0"></ion-checkbox>      
         <!-- {{pesan.tanggal}} -->
         <ion-text color="primary"> {{pesan.dari}}</ion-text>
       

@@ -22,7 +22,9 @@ const routes: Routes = [
   { path: 'forms', loadChildren: './forms/forms.module#FormsPageModule' },
   { path: 'detailform', loadChildren: './detailform/detailform.module#DetailformPageModule' },
   { path: 'adduser', loadChildren: './adduser/adduser.module#AdduserPageModule' },
-  { path: 'pengaturan', loadChildren: './pengaturan/pengaturan.module#PengaturanPageModule' }
+  { path: 'pengaturan', loadChildren: './pengaturan/pengaturan.module#PengaturanPageModule' },
+  { path: 'cetakform', loadChildren: './cetakform/cetakform.module#CetakformPageModule' },
+  { path: 'inputform', loadChildren: './inputform/inputform.module#InputformPageModule' }
 ];
 
 @NgModule({

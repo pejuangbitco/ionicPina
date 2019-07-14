@@ -12,7 +12,7 @@ import { MenuController } from '@ionic/angular';
 })
 export class ProfilPage implements OnInit {
 
-  admin: any;
+  
   username: string;
   status: string;
   nama: string;
@@ -31,11 +31,11 @@ export class ProfilPage implements OnInit {
 
   ionViewWillEnter(){
     this.storage.get('session_storage').then((res)=>{
-      this.admin = res;
-      this.username = this.admin.username;
-      this.status = this.admin.status;
-      this.nama = this.admin.nama;
-      console.log('res profil:'+res);
+      
+      this.username = res.username;
+      this.status = res.status;
+      this.nama = res.nama;
+      
     });
   }
 
