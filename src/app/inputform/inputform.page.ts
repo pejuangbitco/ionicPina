@@ -37,6 +37,11 @@ export class InputformPage implements OnInit {
 		console.log(this.inputId);
 	}
 
+	// setVal1(id_alat, kondisi) {
+	// 	this.inputId[id_alat] = kondisi;
+	// 	console.log(this.inputId);
+	// }
+
 	ionViewWillEnter(){
 		this.storage.get('session_storage').then((res)=>{
 			this.status = res.status;

@@ -11,14 +11,15 @@
 </ion-header>
 
 <ion-content>
-<ion-list *ngIf="status=='admin'">
+<ion-list>
   <ion-card>
 	  <ion-item>    
 	    <ion-label>Form DFR</ion-label>
-	    <ion-button *ngIf="status=='admin'" size="sm" (click)="inputForm('DFR')" size="sm" slot="end" color="tertiary" fill="outline">
-        Buat Form
-        <ion-icon  slot="end" name="add"></ion-icon>
-      </ion-button>
+	    <!-- <ion-button *ngIf="status=='admin'" size="sm" (click)="inputForm('DFR')" size="sm" slot="end" color="tertiary" fill="outline">
+        
+        
+      </ion-button> -->
+	    <ion-button *ngIf="status=='admin'"  (click)="inputForm('DFR')" fill="outline" slot="end">Input</ion-button>
 	    <ion-button (click)="showForm('DFR')" fill="outline" slot="end">View</ion-button>
 	  </ion-item>
 
@@ -29,6 +30,7 @@
  <ion-card>
 	  <ion-item>    
 	    <ion-label>Form IP PHONE</ion-label>
+	    <ion-button *ngIf="status=='admin'"  (click)="inputForm('IP')" fill="outline" slot="end">Input</ion-button>
 	    <ion-button (click)="showForm('IP')" fill="outline" slot="end">View</ion-button>
 	  </ion-item>
 
@@ -39,6 +41,7 @@
  <ion-card>
 	  <ion-item>    
 	    <ion-label>Form PLC</ion-label>
+	    <ion-button *ngIf="status=='admin'"  (click)="inputForm('PLC')" fill="outline" slot="end">Input</ion-button>
 	    <ion-button (click)="showForm('PLC')" fill="outline" slot="end">View</ion-button>
 	  </ion-item>
 
@@ -49,6 +52,7 @@
  <ion-card>
 	  <ion-item>    
 	    <ion-label>Form Master Station</ion-label>
+	    <ion-button *ngIf="status=='admin'"  (click)="inputForm('MS')" fill="outline" slot="end">Input</ion-button>
 	    <ion-button (click)="showForm('MS')" fill="outline" slot="end">View</ion-button>
 	  </ion-item>
 
@@ -59,6 +63,7 @@
  <ion-card>
 	  <ion-item>    
 	    <ion-label>Form RTU dan Gateway</ion-label>
+	    <ion-button *ngIf="status=='admin'"  (click)="inputForm('RTU')" fill="outline" slot="end">Input</ion-button>
 	    <ion-button (click)="showForm('RTU')" fill="outline" slot="end">View</ion-button>
 	  </ion-item>
 
@@ -69,6 +74,7 @@
  <ion-card>
 	  <ion-item>    
 	    <ion-label>Form RADIO</ion-label>
+	    <ion-button *ngIf="status=='admin'"  (click)="inputForm('RADIO')" fill="outline" slot="end">Input</ion-button>
 	    <ion-button (click)="showForm('RADIO')" fill="outline" slot="end">View</ion-button>
 	  </ion-item>
 
@@ -79,6 +85,7 @@
  <ion-card>
 	  <ion-item>    
 	    <ion-label>Form PS SCADA</ion-label>
+	    <ion-button *ngIf="status=='admin'"  (click)="inputForm('SCADA')" fill="outline" slot="end">Input</ion-button>
 	    <ion-button (click)="showForm('SCADA')" fill="outline" slot="end">View</ion-button>
 	  </ion-item>
 

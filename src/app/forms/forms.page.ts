@@ -17,11 +17,17 @@ export class FormsPage implements OnInit {
   	private postPvdr: PostProvider,
     private storage: Storage,
     public toastCtrl: ToastController
-  ) {
-  	this.status = 'admin';
+  ) {  	
   }
 
   ngOnInit() {
+
+  }
+
+  ionViewWillEnter(){
+    this.storage.get('session_storage').then((res)=>{
+      this.status = res.status;   
+    });
   }
 
   showForm(jenis) {  	

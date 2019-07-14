@@ -28,7 +28,7 @@ export class UsersPage implements OnInit {
   loadDataDB(){
   	return new Promise(resolve => {
   		let body = {
-  			aksi : 'getdatauser'
+  			aksi : 'getuser'
   		};
 
   		this.postPvdr.postData(body, 'user/index_post').subscribe(data => {

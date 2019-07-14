@@ -48,7 +48,8 @@ export class DetailpesanPage implements OnInit {
   ionViewWillEnter(){
     this.storage.get('session_storage').then((res)=>{
       this.status = res.status;
-      this.nama_user_sekarang = res.nama;      
+      this.nama_user_sekarang = res.nama;
+      console.log(this.status)      
     });
   }
 

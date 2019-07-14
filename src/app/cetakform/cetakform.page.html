@@ -19,8 +19,49 @@
     <br>
     
   </ion-list>
-  <br>
-  <ion-list *ngIf="jenis=='DFR'">  
+  
+  <ion-list *ngIf="jenis=='DFR'">
+    <ion-item slot="start" lines="none">Nama Alat</ion-item>  
+    <ion-item lines="inset" *ngFor="let b of row_data; let rindex = index">
+      <ion-label>{{rindex+1}}. {{b.nama_alat}}</ion-label>
+      <ion-text slot="end" color="primary">{{b.kondisi}}</ion-text>
+    </ion-item>
+  </ion-list>
+
+  <ion-list *ngIf="jenis=='IP'">
+    <ion-item>Lokasi Alat</ion-item>
+    <ion-item lines="inset" *ngFor="let b of row_data; let rindex = index">
+      <ion-label>{{rindex+1}}. {{b.lokasi_alat}}</ion-label>
+      <ion-text slot="end" color="primary">{{b.kondisi}}</ion-text>
+    </ion-item>
+  </ion-list>
+
+  <ion-list *ngIf="jenis=='PLC'">
+    <ion-item>Lokasi Alat</ion-item>
+    <ion-item lines="inset" *ngFor="let b of row_data; let rindex = index">
+      <ion-label>{{rindex+1}}. {{b.lokasi_alat_dari}}-{{b.lokasi_alat_ke}}</ion-label>
+      <ion-text slot="end" color="primary">{{b.kondisi}}</ion-text>
+    </ion-item>
+  </ion-list>
+
+  <ion-list *ngIf="jenis=='RTU'">
+    <ion-item slot="start" lines="none">Nama Alat</ion-item>  
+    <ion-item lines="inset" *ngFor="let b of row_data; let rindex = index">
+      <ion-label>{{rindex+1}}. {{b.nama_alat}}</ion-label>
+      <ion-text slot="end" color="primary">{{b.kondisi}}</ion-text>
+    </ion-item>
+  </ion-list>
+
+  <ion-list *ngIf="jenis=='RADIO'">
+    <ion-item>Lokasi Alat</ion-item>
+    <ion-item lines="inset" *ngFor="let b of row_data; let rindex = index">
+      <ion-label>{{rindex+1}}. {{b.lokasi_alat}}</ion-label>
+      <ion-text slot="end" color="primary">{{b.kondisi}}</ion-text>
+    </ion-item>
+  </ion-list>
+
+  <ion-list *ngIf="jenis=='SCADA'">
+    <ion-item slot="start" lines="none">Nama Alat</ion-item>  
     <ion-item lines="inset" *ngFor="let b of row_data; let rindex = index">
       <ion-label>{{rindex+1}}. {{b.nama_alat}}</ion-label>
       <ion-text slot="end" color="primary">{{b.kondisi}}</ion-text>

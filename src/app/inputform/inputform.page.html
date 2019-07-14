@@ -30,8 +30,9 @@
     
   </ion-list>
   <br>
-  <ion-list *ngIf="nama_form=='DFR'">  
-    <ion-item lines="inset" *ngFor="let b of row_data; let rindex = index">
+  <ion-list *ngIf="nama_form=='DFR'">
+    <ion-item slot="start" lines="none">Nama Alat</ion-item>  
+    <ion-item lines="full" *ngFor="let b of row_data; let rindex = index">
       <ion-label>{{rindex+1}}. {{b.nama_alat}}</ion-label>
       <ion-radio-group (ionChange)="setVal(b.id_alat,$event)">
         <ion-item lines="none">
@@ -40,11 +41,132 @@
         <ion-item lines="none">
           <ion-radio value="OK" mode="md" slot="start"  color="primary"></ion-radio>  
         </ion-item>
-      
       </ion-radio-group>
     </ion-item>
   </ion-list>
 
+  <ion-list *ngIf="nama_form=='IP'"> 
+    <ion-item slot="start" lines="none">Lokasi Alat</ion-item>     
+    <ion-item lines="full" *ngFor="let b of row_data; let rindex = index">
+      <ion-label>{{rindex+1}}. {{b.lokasi_alat}}</ion-label>
+      <ion-radio-group (ionChange)="setVal(b.id_alat,$event)">
+        <ion-item lines="none">
+        <ion-radio value="NOK" mode="md" slot="start" color="dark" ></ion-radio>    
+        </ion-item>
+        <ion-item lines="none">
+          <ion-radio value="OK" mode="md" slot="start"  color="primary"></ion-radio>  
+        </ion-item>
+      </ion-radio-group>
+    </ion-item>
+  </ion-list>
+
+  <ion-list *ngIf="nama_form=='PLC'"> 
+    <ion-item slot="start" lines="none">Lokasi Alat</ion-item>
+    <ion-item lines="full" *ngFor="let b of row_data; let rindex = index">
+      <ion-label>{{rindex+1}}. {{b.lokasi_alat_dari}}-{{b.lokasi_alat_ke}}</ion-label>
+      <ion-radio-group (ionChange)="setVal(b.id_alat,$event)">
+        <ion-item lines="none">
+        <ion-radio value="NOK" mode="md" slot="start" color="dark" ></ion-radio>    
+        </ion-item>
+        <ion-item lines="none">
+          <ion-radio value="OK" mode="md" slot="start"  color="primary"></ion-radio>  
+        </ion-item>
+      </ion-radio-group>
+    </ion-item>
+  </ion-list>
+
+  <ion-list *ngIf="nama_form=='RTU'"> 
+    <ion-item slot="start" lines="none">Nama Alat</ion-item>     
+    <ion-item lines="full" *ngFor="let b of row_data; let rindex = index">
+      <ion-label>{{rindex+1}}. {{b.nama_alat}}</ion-label>
+      <ion-radio-group (ionChange)="setVal(b.id_alat,$event)">
+        <ion-item lines="none">
+        <ion-radio value="NOK" mode="md" slot="start" color="dark" ></ion-radio>    
+        </ion-item>
+        <ion-item lines="none">
+          <ion-radio value="OK" mode="md" slot="start"  color="primary"></ion-radio>  
+        </ion-item>
+      </ion-radio-group>
+    </ion-item>
+  </ion-list>
+
+  <ion-list *ngIf="nama_form=='RADIO'"> 
+    <ion-item slot="start" lines="none">Lokasi Alat</ion-item>
+    <ion-item lines="full" *ngFor="let b of row_data; let rindex = index">
+      <ion-label>{{rindex+1}}. {{b.lokasi_alat}}</ion-label>
+      <ion-radio-group (ionChange)="setVal(b.id_alat,$event)">
+        <ion-item lines="none">
+        <ion-radio value="NOK" mode="md" slot="start" color="dark" ></ion-radio>    
+        </ion-item>
+        <ion-item lines="none">
+          <ion-radio value="OK" mode="md" slot="start"  color="primary"></ion-radio>  
+        </ion-item>
+      </ion-radio-group>
+    </ion-item>
+  </ion-list>
+
+  <ion-list *ngIf="nama_form=='SCADA'">
+    <ion-item slot="start" lines="none">Nama Alat</ion-item>  
+    <ion-item lines="full" *ngFor="let b of row_data; let rindex = index">
+      <ion-label>{{rindex+1}}. {{b.nama_alat}}</ion-label>
+      <ion-radio-group (ionChange)="setVal(b.id_alat,$event)">
+        <ion-item lines="none">
+        <ion-radio value="NOK" mode="md" slot="start" color="dark" ></ion-radio>    
+        </ion-item>
+        <ion-item lines="none">
+          <ion-radio value="OK" mode="md" slot="start"  color="primary"></ion-radio>  
+        </ion-item>
+      </ion-radio-group>
+    </ion-item>
+  </ion-list>
+
+  <ion-list *ngIf="nama_form=='MS'">
+    <ion-item slot="start" lines="none"><ion-text>Nama Alat</ion-text></ion-item>
+    <ion-item slot="start" lines="none"><ion-text color="primary">Kondisi Lingkungan</ion-text></ion-item>
+    <ion-item lines="full">
+      <ion-label>Suhu Ruangan</ion-label>
+      <ion-input slot="end" placeholder="input suhu" max="100" type="number" (ionChange)="setVal(1,$event)"></ion-input>
+    </ion-item>
+    <ion-item lines="full">
+      <ion-label>Kelembaban:</ion-label>
+      <ion-input slot="end" placeholder="input Kelembaban" max="100" type="number" (ionChange)="setVal(2,$event)"></ion-input>
+    </ion-item>
+    <ion-item lines="full">
+      <ion-label>Kebersihan</ion-label>
+      <ion-radio-group (ionChange)="setVal(3,$event)">
+        <ion-item lines="none">
+        <ion-radio value="NOK" mode="md" slot="start" color="dark" ></ion-radio>    
+        </ion-item>
+        <ion-item lines="none">
+          <ion-radio value="OK" mode="md" slot="start"  color="primary"></ion-radio>  
+        </ion-item>
+      </ion-radio-group>
+    </ion-item>
+    <ion-item lines="full">
+      <ion-label>Lampu penerangan</ion-label>
+      <ion-radio-group (ionChange)="setVal(4,$event)">
+        <ion-item lines="none">
+        <ion-radio value="NOK" mode="md" slot="start" color="dark" ></ion-radio>    
+        </ion-item>
+        <ion-item lines="none">
+          <ion-radio value="OK" mode="md" slot="start"  color="primary"></ion-radio>  
+        </ion-item>
+      </ion-radio-group>
+    </ion-item>
+    <ion-item slot="start" lines="none"><ion-text color="primary">Kondisi Fungsi Server</ion-text></ion-item>
+    <ion-item lines="full" *ngFor="let b of row_data; let rindex = index">
+      <ion-item >
+      <ion-label *ngIf="b.jenis_alat=='KONDISI FUNGSI SERVER'">{{rindex+1}}. {{b.nama_alat}}</ion-label>
+      <ion-radio-group *ngIf="b.jenis_alat=='KONDISI FUNGSI SERVER'" (ionChange)="setVal(b.id_alat,$event)">
+        <ion-item lines="none">
+        <ion-radio value="NOK" mode="md" slot="start" color="dark" ></ion-radio>    
+        </ion-item>
+        <ion-item lines="none">
+          <ion-radio value="OK" mode="md" slot="start"  color="primary"></ion-radio>  
+        </ion-item>
+      </ion-radio-group>
+    </ion-item>
+  </ion-list>
 
   <ion-list>
     <ion-item lines="none">
